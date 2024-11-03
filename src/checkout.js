@@ -37,7 +37,13 @@ export default function Checkout() {
       console.error('Error', error)
     });
   };
-
+  fetch("http://localhost:3333/deleteLastRow", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(),
+  })
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="sm">

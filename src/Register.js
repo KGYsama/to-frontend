@@ -40,7 +40,7 @@ export default function SignUp() {
       fname: data.get('firstName'),
       lname: data.get('lastName'),
     }
-    fetch("http://localhost:3333/register", {
+    fetch(`${process.env.REACT_APP_API_URL}/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -22,7 +22,7 @@ function Album() {
   const [open, setOpen] = useState(false);
   
   useEffect(() => {
-    fetch("http://localhost:3333/authen", {
+    fetch(`${process.env.REACT_APP_API_URL}/authen`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const handleBook = (event) => {
   }
   useEffect(() => {
     
-      fetch("http://localhost:3333/barcode/getCheck", {
+      fetch(`${process.env.REACT_APP_API_URL}/barcode/getCheck`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -35,7 +35,7 @@ export default function SignInSide() {
       email: data.get('email'),
       password: data.get('password')
     }
-    fetch("http://localhost:3333/login", {
+    fetch(`${process.env.REACT_APP_API_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

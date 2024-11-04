@@ -23,7 +23,7 @@ export default function book() {
       bookingDate: data.get('booking')   
     } 
     // เรียก API เพื่อตรวจสอบว่ามีการจองในวันที่เลือกหรือไม่
-    fetch("http://localhost:3333/barcode/check", {
+    fetch(`${process.env.REACT_APP_API_URL}/barcode/check`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function book() {
     .then(response => response.json())
     .then(data => {
       if(data.status === 'ok'){
-        fetch("http://localhost:3333/barcode", {
+        fetch(`${process.env.REACT_APP_API_URL}/barcode`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ export default function book() {
         .catch((error) => {
           console.error('Error', error)
         })
-        fetch("http://localhost:3333/barcodeid", {
+        fetch(`${process.env.REACT_APP_API_URL}/barcodeid`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

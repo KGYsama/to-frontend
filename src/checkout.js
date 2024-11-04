@@ -16,7 +16,7 @@ export default function Checkout() {
 
    
 
-    fetch("http://localhost:3333/LogOut", {
+    fetch(`${process.env.REACT_APP_API_URL}/LogOut`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
